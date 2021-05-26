@@ -1,0 +1,22 @@
+{
+  "name": "node_refresh",
+  "version": "1.0.0",
+  "description": "review node processes",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/listenToRipley/node_refresh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/listenToRipley/node_refresh/issues"
+  },
+  "homepage": "https://github.com/listenToRipley/node_refresh#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
