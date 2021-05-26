@@ -8,7 +8,8 @@ function callbackServer(req, res) {
   res.end(
     'Welcome to my headspace!'  +
     ' today is : '
-    + moment().format('LLL')
+    + moment().format('LLL') +
+    ' it is ' + moment('08', 'MM').fromNow()  + ' and ' + moment('18', 'DD').fromNow() + ' until your birthday'
   )
 }
 
