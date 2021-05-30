@@ -1,13 +1,17 @@
 const { count } = require('console');
 var http = require('http');
 var moment = require('moment');
+const { parse } = require('path/posix');
 
 function callbackServer(req, res) {
-  var month_down = moment('07', 'MM').fromNow();
-  var days_down = moment('18', 'DD').fromNow();
+  var month_birth = moment('07', 'MM');
+  var days_birth =  moment('18', 'DD');
+  var month_today = moment.format('MM');
+  var day_today = moment.format('DD');
 
-  console.log(' months ', month_down)
-  console.log( ' days ' , days_down)
+  var month_down = parseInt(month_birth) - parseInt(month_today)
+
+  var days_down = parseInt(day_today) - parseInt(days_birth)
 
   res.writeHead(200, {
     'Content-Type': 'text/plain'
