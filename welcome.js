@@ -1,17 +1,14 @@
 const { count } = require('console');
 var http = require('http');
 var moment = require('moment');
-const { parse } = require('path/posix');
 
 function callbackServer(req, res) {
   var month_birth = moment('07', 'MM');
   var days_birth =  moment('18', 'DD');
-  var month_today = moment.format('MM');
-  var day_today = moment.format('DD');
 
-  var month_down = parseInt(month_birth) - parseInt(month_today)
+  var month_down = month_birth.diff(moment(), 'months')
 
-  var days_down = parseInt(day_today) - parseInt(days_birth)
+  var days_down = Math.abs(parseInt(days_birth.diff(moment(), 'days')))
 
   res.writeHead(200, {
     'Content-Type': 'text/plain'
@@ -21,7 +18,8 @@ function callbackServer(req, res) {
     ' today is : \n'
     + moment().format('LLL') +
     ' \n ' + 
-    month_down + ' ' + days_down
+    ' It is ' +
+    month_down + ' months and ' + days_down + ' days until your birthday!'
   )
 }
 
