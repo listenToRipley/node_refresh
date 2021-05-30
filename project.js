@@ -30,7 +30,7 @@ http.createServer( function (req, res) {
     res.writeHead(200, {
       'Content-type': 'text/html'
     });
-    res.end(req_body)
+    res.end(response(JSON.parse(req_body)))
   } else {
     res.writeHead(200, { 
       'Content-Type': 'text/plain'
