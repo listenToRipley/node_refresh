@@ -3,6 +3,15 @@ var request = require('request')
 
 var req_body = undefined;
 
+function response(data) {
+  var html_string = '<html> \n <header> \n <title. Data aggregator </title> \n </header> \n <body> \n <body>';
+
+  html_string+= '<tr> \n';
+  for(var item in data) {
+    item
+  }
+}
+
 request('https://www.bnefoodtrucks.com.au/api/1/trucks', function(err, req_res, body) {
   req_body = body; 
 })
