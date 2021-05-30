@@ -3,7 +3,7 @@ var request = require('request')
 
 var req_body = undefined;
 
-function response(data) {
+function response_JSON(data) {
   var html_string = '<html> \n <header> \n <title. Data aggregator </title> \n </header> \n <body> \n <table>';
   
   data.forEach(function(obj) {
@@ -30,7 +30,7 @@ http.createServer( function (req, res) {
     res.writeHead(200, {
       'Content-type': 'text/html'
     });
-    res.end(response(JSON.parse(req_body)))
+    res.end(response_JSON(JSON.parse(req_body)))
   } else {
     res.writeHead(200, { 
       'Content-Type': 'text/plain'
