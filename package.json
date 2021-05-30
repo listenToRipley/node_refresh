@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/listenToRipley/node_refresh#readme",
   "dependencies": {
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "request": "^2.88.2"
   }
 }
