@@ -5,14 +5,20 @@ var req_body = undefined;
 
 function response(data) {
   var html_string = '<html> \n <header> \n <title. Data aggregator </title> \n </header> \n <body> \n <table>';
-
-  html_string+= '<tr> \n';
-  for(var item in data[0]) {
-    if(typeof data[0][item] !== 'object') {
-      html_string += '<td' + item + '</td> \n';
+  
+  data.forEach(function(obj) {
+    html_string+= '<tr> \n';
+    for(var item in obj) {
+      if(typeof obj[item] !== 'object') {
+        html_string += '<td' + obj[item] + '</td> \n';
+      }
     }
-  }
-  html_string += '</tr> \n </table> \n </body>'
+    html_string += '</tr> \n '
+  });
+
+  html_string+= '</table> \n </body> \n </html>'
+
+  return html_string
 }
 
 request('https://www.bnefoodtrucks.com.au/api/1/trucks', function(err, req_res, body) {
